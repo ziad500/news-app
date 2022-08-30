@@ -4,7 +4,6 @@ import 'package:news_app/modules/search/search.dart';
 import 'package:news_app/shared/components/components.dart';
 import 'package:news_app/shared/cubit/cubit.dart';
 import 'package:news_app/shared/cubit/states.dart';
-import 'package:news_app/shared/cubit/theme.dart';
 
 class NewsLayout extends StatelessWidget {
   @override

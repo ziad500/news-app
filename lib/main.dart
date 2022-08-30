@@ -1,19 +1,24 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'dart:io';
+
+import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:news_app/layout/news_app/news_layout.dart';
 import 'package:news_app/network/remote/cashe_helper.dart';
 import 'package:news_app/network/remote/dio_helper.dart';
 import 'package:news_app/shared/cubit/cubit.dart';
 import 'package:news_app/shared/cubit/states.dart';
-import 'package:news_app/shared/cubit/theme.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  if (Platform.isWindows) {
+    await DesktopWindow.setMinWindowSize(Size(650.0, 650.0));
+  }
   DioHelper.init();
   await CasheHelper.init();
   bool? isDark = CasheHelper.getData(key: 'isDark');

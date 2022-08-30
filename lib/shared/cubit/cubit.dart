@@ -36,6 +36,13 @@ class NewsCubit extends Cubit<NewsStates> {
   List<Widget> Screens = [BusinessScreen(), SportsScreen(), ScienceScreen()];
 
   List<dynamic> business = [];
+  int selectedBusinessItem = 0;
+  bool isDesktop = false;
+
+  void setDesktop(bool value) {
+    isDesktop = value;
+    emit(NewsSetDesktopState());
+  }
 
   void getBusiness() {
     emit(NewsBusinessLoadingState());
@@ -46,7 +53,10 @@ class NewsCubit extends Cubit<NewsStates> {
         'apiKey': 'cdba10e504e944d6b863fafa52eda882'
       }).then((value) {
         business = value.data['articles'];
-        print(business[0]['title']);
+        /* business.forEach((element) {
+          businessSelectedItem.add(false);
+        }); */
+        print('....................${business[0]}');
         emit(NewsGetBusinessSuccessState());
       }).catchError((error) {
         print("error is $error");
@@ -55,6 +65,18 @@ class NewsCubit extends Cubit<NewsStates> {
     } else {
       emit(NewsGetBusinessSuccessState());
     }
+  }
+
+  void selectBuisinessItem(index) {
+    selectedBusinessItem = index;
+    /*  for (var i = 0; i < businessSelectedItem.length; i++) {
+      if (i == index) {
+        businessSelectedItem[i] = true;
+      } else {
+        businessSelectedItem[i] = false;
+      }
+    } */
+    emit(NewsSelectBusinessSuccessState());
   }
 
   List<dynamic> Sports = [];
