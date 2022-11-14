@@ -8,12 +8,11 @@
 - intract with News
 
 ## Implementation:
--Bloc 
+- Bloc
+- desktop_window
+- dio
+- motion_tab_bar
+- shared_preferences
+- webview_flutter
 
--Rest Api 
 
--Ui
-
--Dio
-
--shared Prefference
