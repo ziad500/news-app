@@ -5,7 +5,11 @@
 
 ## Technology:
 -Bloc 
+
 -Rest Api 
--Ui 
--Dio 
+
+-Ui
+
+-Dio
+
 -shared Prefference
