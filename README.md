@@ -3,7 +3,7 @@
 # Egyption News App
 ### Mobile Application and desktop to browse all exclusive news from all Egyptian news sites with option to search for any Egyptian or International news.
 
-## Technology:
+## Implementation:
 -Bloc 
 
 -Rest Api 
